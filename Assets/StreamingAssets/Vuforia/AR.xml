@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+  <Tracking>
+    <ImageTarget name="boardgame2" size="10.000000 14.136364" />
+    <ImageTarget name="boardgame1" size="10.000000 14.063206" />
+    <ImageTarget name="cards" size="10.000000 14.332344" />
+    <ImageTarget name="ganyu5" size="10.000000 15.984016" />
+    <ImageTarget name="ganyu4" size="1000.000000 1598.401611" />
+    <ImageTarget name="whatsappimage2024-09-23at14" size="1440.000000 2175.637451" />
+  </Tracking>
+</QCARConfig>
