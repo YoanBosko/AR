@@ -24,6 +24,6 @@ public class ChangeScene : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
-        // UnityEditor.EditorApplication.ExitPlaymode();
+        UnityEditor.EditorApplication.ExitPlaymode();
     }
 }
