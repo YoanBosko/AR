@@ -202,8 +202,9 @@ GameObject:
   - component: {fileID: 100153414}
   - component: {fileID: 100153413}
   - component: {fileID: 100153416}
+  - component: {fileID: 100153417}
   m_Layer: 0
-  m_Name: ImageTarget
+  m_Name: ImageTarget1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -274,6 +275,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 100153417}
+        m_TargetAssemblyTypeName: CardStatus, Assembly-CSharp
+        m_MethodName: TargetFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
       m_Calls:
@@ -317,6 +330,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 100153417}
+        m_TargetAssemblyTypeName: CardStatus, Assembly-CSharp
+        m_MethodName: TargetLost
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -388,6 +413,21 @@ MonoBehaviour:
   mCastedBehaviour: {fileID: 100153414}
   mMeshFilter: {fileID: 0}
   mMeshRenderer: {fileID: 0}
+--- !u!114 &100153417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100153412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89196cb3f66cdc04c9fa37a7347fa093, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CardNumber: 1
+  isTracked: 0
+  cardBehaviors: []
 --- !u!1 &177982146
 GameObject:
   m_ObjectHideFlags: 0
@@ -2342,6 +2382,7 @@ GameObject:
   - component: {fileID: 973390591}
   - component: {fileID: 973390590}
   - component: {fileID: 973390589}
+  - component: {fileID: 973390594}
   m_Layer: 0
   m_Name: ARCamera
   m_TagString: MainCamera
@@ -2452,6 +2493,40 @@ Transform:
   - {fileID: 1957663725}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &973390594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973390588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecc868b76dfed7d4a895696375651066, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CardValue: 0
+  cardStatus:
+  - {fileID: 100153417}
+  - {fileID: 1957663729}
+  cardConditions:
+  - CardCondition: 3
+    onConditionMet:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1187276413}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+    hasExecuted: 0
 --- !u!1 &1008537985
 GameObject:
   m_ObjectHideFlags: 0
@@ -2801,6 +2876,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1187276413 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 275824893d1457a40b2b599fb1ef733d, type: 3}
+  m_PrefabInstance: {fileID: 721303027}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1199823913
 GameObject:
   m_ObjectHideFlags: 0
@@ -3387,6 +3467,109 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -2006}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1433700376
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1433700378}
+  - component: {fileID: 1433700377}
+  m_Layer: 0
+  m_Name: Multi Target Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1433700377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433700376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 406e212f45a0bea41b627fd71376a1a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetMarker:
+  - MarkerName: ImageTarget1
+    MarkerStatus: 1
+  - MarkerName: ImageTarget1
+    MarkerStatus: 1
+  OnTrackedFound:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1757518682}
+        m_TargetAssemblyTypeName: UnityEngine.Transform, UnityEngine
+        m_MethodName: LookAt
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1402212807}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2036468886}
+        m_TargetAssemblyTypeName: UnityEngine.Transform, UnityEngine
+        m_MethodName: LookAt
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1402212807}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnTrackedLost:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1757518682}
+        m_TargetAssemblyTypeName: UnityEngine.Transform, UnityEngine
+        m_MethodName: LookAt
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1757518682}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2036468886}
+        m_TargetAssemblyTypeName: UnityEngine.Transform, UnityEngine
+        m_MethodName: LookAt
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2036468887}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!4 &1433700378
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433700376}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.150333, y: 68.01702, z: -2106.5305}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4143,6 +4326,7 @@ GameObject:
   - component: {fileID: 1757518685}
   - component: {fileID: 1757518684}
   - component: {fileID: 1757518683}
+  - component: {fileID: 1757518686}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -4236,6 +4420,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1757518681}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1757518686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757518681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a95daccfce7feab48bca6cf6234adc21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1834354835
 GameObject:
   m_ObjectHideFlags: 0
@@ -4575,8 +4771,9 @@ GameObject:
   - component: {fileID: 1957663727}
   - component: {fileID: 1957663726}
   - component: {fileID: 1957663728}
+  - component: {fileID: 1957663729}
   m_Layer: 0
-  m_Name: ImageTarget
+  m_Name: ImageTarget2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4663,6 +4860,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1957663729}
+        m_TargetAssemblyTypeName: CardStatus, Assembly-CSharp
+        m_MethodName: TargetFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
       m_Calls:
@@ -4706,6 +4915,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1957663729}
+        m_TargetAssemblyTypeName: CardStatus, Assembly-CSharp
+        m_MethodName: TargetLost
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4760,6 +4981,21 @@ MonoBehaviour:
   mCastedBehaviour: {fileID: 1957663727}
   mMeshFilter: {fileID: 0}
   mMeshRenderer: {fileID: 0}
+--- !u!114 &1957663729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957663724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89196cb3f66cdc04c9fa37a7347fa093, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CardNumber: 2
+  isTracked: 0
+  cardBehaviors: []
 --- !u!1 &1978320701
 GameObject:
   m_ObjectHideFlags: 0
@@ -4922,6 +5158,7 @@ GameObject:
   - component: {fileID: 2036468890}
   - component: {fileID: 2036468889}
   - component: {fileID: 2036468888}
+  - component: {fileID: 2036468891}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -5015,6 +5252,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2036468886}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2036468891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036468886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a95daccfce7feab48bca6cf6234adc21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2073851852
 GameObject:
   m_ObjectHideFlags: 0
@@ -5268,3 +5517,4 @@ SceneRoots:
   - {fileID: 1483032388}
   - {fileID: 86689180}
   - {fileID: 1008537989}
+  - {fileID: 1433700378}
